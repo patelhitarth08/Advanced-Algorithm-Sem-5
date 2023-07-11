@@ -38,7 +38,6 @@ bool isPrime(unsigned long long int n)
     while (k--)
     {
         unsigned long long int a = 2 + rand() % (n - 4);
-
         if (gcd(n, a) != 1)
             return false;
         if (power(a, n - 1, n) != 1)
@@ -50,12 +49,14 @@ bool isPrime(unsigned long long int n)
 int main() 
 {
     unsigned long long int num;
-    cout << "Enter a number: " << endl;
-    cin >> num;
-    if (isPrime(num) == true)
-        cout << num << " is a Prime number" << endl;
-    else
-        cout << num << " is not a Prime number" << endl;
-
+    while (true) {
+        cout << "Enter a number: ";
+        cin >> num;
+    
+        if (isPrime(num) == true)
+            cout << "Prime number" << endl << endl;
+        else
+            cout << "Composite number" << endl << endl;
+    }
     return 0;
 }
